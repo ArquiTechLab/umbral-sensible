@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/png" href="./public/assets/images/logo.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Proyecto</title>
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="/src/css/base.css">
+  <link rel="stylesheet" href="/src/css/footer.css">
+  <link rel="stylesheet" href="/src/css/header.css">
+  <link rel="stylesheet" href="/src/css/pages.css">
+</head>
+
+<body>
+  <!-- Header incluido dinámicamente -->
+  <div data-include="/src/components/header.html"></div>
+
+  <main>
+    <section id="inicio" class="hero container" role="region" aria-labelledby="hero-title">
+      <h1 id="hero-title">Nombre del Proyecto</h1>
+      <p>Descripción base.</p>
+    </section>
+  </main>
+
+  <!-- Footer incluido dinámicamente -->
+  <div data-include="/src/components/footer.html"></div>
+
+  <!-- Script que incluye componentes HTML (data-include) -->
+  <script src="/src/js/include-html.js"></script>
+
+  <!-- Script para funcionalidad del menú hamburguesa -->
+  <script>
+    document.addEventListener('includes:loaded', () => {
+      document.addEventListener('click', (ev) => {
+        const btn = ev.target.closest('.nav-toggle');
+        if (!btn) return;
+        const navList = document.querySelector('#main-nav ul');
+        if (!navList) return;
+        const expanded = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', String(!expanded));
+        btn.setAttribute('aria-label', expanded ? 'Abrir menú' : 'Cerrar menú');
+        navList.classList.toggle('show');
+      });
+    });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,118 @@
+/* Estilos compartidos para páginas con secciones verticales */
+:root {
+  --section-gap: 24px;
+  --brand-color: #05267f;
+  --heading-color: #091639;
+  --muted-color: #333333;
+}
+
+/* Tipografía global de headings */
+h1 {
+  color: var(--heading-color);
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  font-weight: 700;
+  line-height: 1.05;
+  margin: 0 0 0.5rem;
+  text-align: center;
+}
+
+h2 {
+  color: var(--heading-color);
+  font-size: clamp(1.25rem, 2.2vw, 1.75rem);
+  font-weight: 700;
+  margin: 0 0 0.5rem;
+}
+
+h3 {
+  color: var(--heading-color);
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin: 0 0 0.4rem;
+}
+
+p, li {
+  color: var(--muted-color);
+  line-height: 1.6;
+}
+
+.split-sections {
+  display: block;
+}
+
+.split-section {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: calc(100vh - var(--header-h, 64px) - var(--footer-h, 64px));
+  padding: 2rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.01));
+}
+
+.section-inner { max-width: 900px; }
+
+.section-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  margin: 1rem 0 1.5rem 0;
+}
+
+.nav-btn {
+  background: rgba(0,0,0,0.06);
+  color: inherit;
+  border: 1px solid rgba(0,0,0,0.08);
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color .15s ease, transform .12s ease;
+  flex: 1 1 auto;
+  min-width: 120px;
+  text-align: center;
+}
+
+/* Cambiar el hover de los botones */
+.nav-btn:hover {
+  background: rgba(0,0,0,0.12);
+  transform: translateY(-2px);
+}
+
+/* Mantener comportamiento del botón activo al hacer hover */
+.nav-btn[aria-current="true"]:hover,
+.nav-btn.active:hover {
+  background: color-mix(in srgb, var(--brand-color, #192836) 85%, black 15%);
+  color: #fff;
+  transform: none;
+}
+
+.nav-btn[aria-current="true"], .nav-btn.active {
+  background: var(--brand-color, #03621c);
+  color: #fff;
+  border-color: rgba(0,0,0,0.12);
+}
+
+/* smooth scrolling */
+html { scroll-behavior: smooth; }
+
+/* responsive: botones a la mitad inferior en pantallas pequeñas */
+@media (max-width: 860px) {
+  .section-nav { gap: 0.5rem; }
+  .nav-btn { padding: 0.45rem 0.6rem; }
+  .split-section { padding: 1.25rem; min-height: calc(100vh - var(--header-h, 56px) - var(--footer-h, 88px)); }
+}
+
+/* botón para volver al inicio dentro de cada sección */
+.to-top-btn {
+  background: transparent;
+  border: 1px solid rgba(0,0,0,0.08);
+  padding: 0.45rem 0.6rem;
+  border-radius: 6px;
+  cursor: pointer;
+  color: inherit;
+}
+
+.to-top-btn:hover { background: rgba(0,0,0,0.04); }

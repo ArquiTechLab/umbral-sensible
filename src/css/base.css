@@ -1,0 +1,75 @@
+/* Estilos base */
+:root {
+  --bg: #ffffff;
+  --fg: #111827;
+  --accent: #0ea5a4;
+  --container: 1100px;
+  --footer-h: 64px;
+  /* altura del footer fijo */
+}
+
+* {
+  box-sizing: border-box
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  color: var(--fg);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none
+}
+
+/* Evita que el contenido quede bajo el footer fijo */
+| body {
+  padding-bottom: var(--footer-h);
+}
+
+.container {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 1rem
+}
+
+.hero {
+  padding: 4rem 1rem;
+  text-align: center
+}
+
+.hero h1 {
+  font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+  margin: 0 0 .5rem
+}
+
+.hero p {
+  max-width: 60ch;
+  margin: .5rem auto 1.5rem;
+  color: #374151
+}
+
+.grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr))
+}
+
+.card {
+  padding: 1rem;
+  border-radius: 8px;
+  background: #fbfbfb;
+  border: 1px solid rgba(0, 0, 0, .04)
+}
+
+/* Responsive general */
+@media (max-width:860px) {
+  .container {
+    padding: 0.75rem
+  }
+}

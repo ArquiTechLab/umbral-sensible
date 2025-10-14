@@ -1,0 +1,32 @@
+<!-- Header -->
+<header class="hero-bg">
+  <div class="container nav">
+    <!-- Logo + título -->
+    <a href="/" class="brand">
+      <img src="/public/assets/images/logo.png" alt="Logo Proyecto" style="height:40px; width:auto;" />
+      <span>Proyecto</span>
+    </a>
+
+    <!-- Botón hamburguesa -->
+    <button class="nav-toggle" aria-label="Abrir menú" onclick="toggleNav()">☰</button>
+
+    <!-- Menú de navegación -->
+    <nav id="main-nav" role="navigation" aria-label="Navegación principal">
+      <ul>
+        <li><a href="/index.html">Inicio</a></li>
+        <li><a href="/src/pages/about.html">Contexto</a></li>
+        <li><a href="/src/pages/idea.html">Idea del Proyecto</a></li>
+        <li><a href="/src/pages/systems.html">Sistemas Estructurales</a></li>
+        <li><a href="/src/pages/visualization.html">Visualización Final</a></li>
+        <li><a href="/src/pages/gallery.html">Galería</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<script>
+  function toggleNav() {
+    const nav = document.getElementById('main-nav');
+    nav.classList.toggle('show');
+  }
+</script>

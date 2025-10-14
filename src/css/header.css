@@ -1,0 +1,149 @@
+/* Estilos para el header y la navegación */
+:root {
+  --header-bg: #00299b;
+  --header-h: 64px;
+  --accent: #007bff;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  padding-top: var(--header-h);
+  transition: padding-top 0.12s ease;
+}
+
+/* Header fijo con fondo y sombra */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: var(--header-bg);
+  color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  backdrop-filter: blur(6px);
+  height: var(--header-h);
+  display: flex;
+  align-items: center;
+}
+
+/* Fondo con imagen y overlay opcional */
+header.hero-bg {
+  background-size: cover;
+  background-position: center;
+}
+
+header.hero-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+}
+
+header.hero-bg .container {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  width: 100%;
+}
+
+/* Layout principal del header */
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+/* Marca: logo + texto */
+.brand {
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: #fff;
+}
+
+.brand img {
+  height: 40px;
+  width: auto;
+  display: block;
+}
+
+/* Navegación principal */
+nav {
+  flex: 1;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+nav ul li a {
+  display: inline-block;
+  padding: 0.3rem 0.6rem;
+  font-weight: 500;
+  text-decoration: none;
+  color: #fff;
+  transition: color 0.2s ease, text-decoration 0.2s ease;
+}
+
+nav ul li a:hover {
+  color: #cddfff;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* Botón hamburguesa */
+.nav-toggle {
+  display: none;
+  background: transparent;
+  border: 0;
+  font-size: 1.5rem;
+  padding: 0.4rem;
+  cursor: pointer;
+  color: #fff;
+}
+
+/* Botón especial (si lo usas) */
+.btn-cta {
+  background: var(--accent);
+  color: #fff;
+  padding: 0.45rem 0.8rem;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+/* Responsive para móviles */
+@media (max-width: 860px) {
+  nav ul {
+    display: none;
+    position: absolute;
+    top: var(--header-h);
+    left: 0;
+    right: 0;
+    background: #00299b;
+    flex-direction: column;
+    padding: 1rem;
+    gap: 0.5rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+  }
+
+  #main-nav.show ul {
+    display: flex;
+  }
+
+  .nav-toggle {
+    display: inline-flex;
+  }
+}
