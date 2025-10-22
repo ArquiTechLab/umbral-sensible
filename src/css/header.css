@@ -1,13 +1,12 @@
 /* ESTILOS PARA HEADER */
 :root {
-  --header-bg: #d9d8d8;
+  --header-bg: #ffffff;
   --header-h: 64px;
   --accent: #007bff;
   --text-color: #000000;
   --hover-color: #007bff;
 }
 
-/* Ajustes generales del documento */
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -32,15 +31,19 @@ header {
   align-items: center;
 }
 
-/* Contenedor principal */
+/* Contenedor */
 header .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 1rem;
+  padding: 0 2rem;
   width: 100%;
+}
+
+/* Layout del header */
+.nav {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
 }
 
 /* MARCA (logo + texto)*/
@@ -48,7 +51,7 @@ header .container {
   font-weight: 700;
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.6rem;
   text-decoration: none;
   color: var(--text-color);
 }
@@ -61,7 +64,8 @@ header .container {
 
 /* NAVEGACIÓN PRINCIPAL */
 nav {
-  flex: 1;
+  display: flex;
+  align-items: center;
 }
 
 nav ul {
@@ -69,7 +73,7 @@ nav ul {
   padding: 0;
   margin: 0;
   display: flex;
-  gap: 1rem;
+  gap: 1.5rem;
   align-items: center;
 }
 
@@ -88,7 +92,7 @@ nav ul li a:hover {
   cursor: pointer;
 }
 
-/* BOTÓN HAMBURGUESA */
+/* Botón hamburguesa oculto por defecto */
 .nav-toggle {
   display: none;
   background: transparent;
@@ -99,17 +103,7 @@ nav ul li a:hover {
   color: var(--text-color);
 }
 
-/* BOTÓN DESTACADO (opcional) */
-.btn-cta {
-  background: var(--accent);
-  color: #fff;
-  padding: 0.45rem 0.8rem;
-  border-radius: 6px;
-  font-weight: 600;
-  text-decoration: none;
-}
-
-/*    RESPONSIVE (móviles) */
+/* BOTÓN HAMBURGUESA */
 @media (max-width: 860px) {
   nav ul {
     display: none;
@@ -120,7 +114,7 @@ nav ul li a:hover {
     background: #ffffff;
     flex-direction: column;
     padding: 1rem;
-    gap: 0.5rem;
+    gap: 0.8rem;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   }
 
