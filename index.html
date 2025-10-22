@@ -7,43 +7,42 @@
   <title>Proyecto | Difusión de Especies de Insectos</title>
 
   <!-- Ícono del sitio -->
-  <link rel="icon" type="image/svg+xml" href="/public/assets/images/logo.png"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="./public/assets/images/logo.png" />
 
-  <!-- 🔗 Open Graph y Twitter Cards -->
-  <meta property="og:title" content="Proyecto | Difusión de Especies de Insectos" />
+  <!-- 🔗 Metadatos para compartir -->
+  <meta property="og:title" content="Proyecto" />
   <meta property="og:description"
     content="Aplicación web educativa para la difusión estructurada de información sobre especies de insectos de interés científico y productivo." />
-  <meta property="og:image" content="https://TU_NOMBRE.netlify.app/assets/images/logo.png" />
+  <meta property="og:image" content="https://proyecto-coreducacion.netlify.app/assets/images/logo.png" />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://TU_NOMBRE.netlify.app/" />
+  <meta property="og:url" content="https://proyecto-coreducacion.netlify.app/" />
   <meta name="twitter:card" content="summary_large_image" />
 
   <!-- Estilos -->
-  <link rel="stylesheet" href="/src/css/base.css">
-  <link rel="stylesheet" href="/src/css/footer.css">
-  <link rel="stylesheet" href="/src/css/header.css">
-  <link rel="stylesheet" href="/src/css/pages.css">
+  <link rel="stylesheet" href="../src/css/base.css">
+  <link rel="stylesheet" href="../src/css/footer.css">
+  <link rel="stylesheet" href="../src/css/header.css">
+  <link rel="stylesheet" href="../src/css/pages.css">
 </head>
 
 <body>
   <!-- Header incluido dinámicamente -->
-  <div data-include="/src/components/header.html"></div>
+  <div data-include="../src/components/header.html"></div>
 
   <main>
     <section id="inicio" class="hero container" role="region" aria-labelledby="hero-title">
-      <h1 id="hero-title">Nombre del Proyecto</h1>
-      <p>Aplicación web para visualizar y difundir información estructurada sobre especies de insectos.</p>
+      <h1 id="hero-title">Proyecto de académico</h1>
+      <p>Aplicación web educativa para visualizar el Proyecto Académico para La Corporación de Educación del Norte del Tolima (COREDUCACIÓN).</p>
     </section>
   </main>
 
   <!-- Footer incluido dinámicamente -->
-  <div data-include="/src/components/footer.html"></div>
+  <div data-include="../src/components/footer.html"></div>
 
-  <!-- Script que incluye componentes HTML (data-include) -->
-  <script src="/src/js/include-html.js"></script>
+  <!-- Script que incluye componentes HTML -->
+  <script src="../src/js/include-html.js"></script>
 
-  <!-- Script para funcionalidad del menú hamburguesa -->
+  <!-- Script del menú hamburguesa -->
   <script>
     document.addEventListener('includes:loaded', () => {
       document.addEventListener('click', (ev) => {
