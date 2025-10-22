@@ -13,9 +13,8 @@ footer {
   min-height: var(--footer-h);
   padding: 0.6rem 1rem;
   text-align: center;
-  color: #ffffff;
-  background: #00299b;
-  border-top: 1px solid rgba(0, 0, 0, 0.12);
+  color: #000000;
+  background: #ffffff;
   z-index: 40;
 }
 
